@@ -1,4 +1,4 @@
-import { ADD_CONTENT, DELETE_CONTENT, FETCHED_CONTENT, GET_CONTENT, UPDATE_CONTENT, } from '../actionTypes';
+import { ADD_CONTENT, DELETE_CONTENT, GET_CONTENT, UPDATE_CONTENT } from '../actionTypes';
 
 const initalState = {
     blogs:[]
@@ -6,19 +6,21 @@ const initalState = {
 
 export const contentReducer = (state = initalState,action)=>{
     switch(action.type){
-        case FETCHED_CONTENT:
-            return{
-                ...state,
-                blogs:[...state.blogs,action.payload]
-            }
         case ADD_CONTENT:
             return{}
         case GET_CONTENT:
-            return{}
+            return{
+                ...state,
+                blogs:action.payload
+            }
         case UPDATE_CONTENT:
             return{}
         case DELETE_CONTENT:
-            return{}
+            // const deletedBlog = state.blogs.includes(blog=> blog._id === action.payload._id);
+            return{
+                ...state,
+                blogs:[...state.blogs]
+            }
         default: return state
     }
 }

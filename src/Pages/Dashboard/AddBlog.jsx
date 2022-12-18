@@ -1,18 +1,20 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { ADD_CONTENT } from '../../Redux/actionTypes';
 const AddBlog = () => {
     const { register, handleSubmit } = useForm();
-
+    const dispatch = useDispatch()
     const submit = (data) => {
       const {Title,image} = data
-      const blogs = {
+      const blog = {
           Title: Title,
           image:image,
       };
-      console.log(blogs,data);
+      return dispatch({type:ADD_CONTENT,payload:blog})
     };
     return (
-        <div className='flex justify-center items-center h-full '>
+     <div className='flex justify-center items-center h-full '>
         <form
           className='shadow-lg p-10 rounded-md flex flex-wrap gap-3 max-w-3xl justify-between bg-white'
           onSubmit={handleSubmit(submit)}
