@@ -4,9 +4,11 @@ import Navbar from './Navbar';
 
 const Main = () => {
     return (
-      <div>
+      <div className='px-auto '>
         <Navbar />
-        <Outlet />
+        <div className='max-w-7xl my-10 mx-auto'>
+          <Outlet />
+        </div>
       </div>
     );
 };

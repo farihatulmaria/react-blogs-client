@@ -13,7 +13,7 @@ const routes = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/reading-istory",
+        path: "/reading-history",
         element: <ReadingHistory />,
       },
     ],
