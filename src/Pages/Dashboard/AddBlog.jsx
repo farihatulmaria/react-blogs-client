@@ -6,10 +6,16 @@ const AddBlog = () => {
     const { register, handleSubmit } = useForm();
     const dispatch = useDispatch()
     const submit = (data) => {
-      const {Title,image} = data
+      const {Title,image,subject} = data
       const blog = {
           Title: Title,
           image:image,
+          Descri:{
+            title:subject,
+            content:{
+              
+            }
+          }
       };
       return dispatch({type:ADD_CONTENT,payload:blog})
     };
@@ -35,7 +41,7 @@ const AddBlog = () => {
             <label className='mb-2' htmlFor='image'>
               Subject
             </label>
-            <input type='text' className="border py-2 border-grey-300" name='Subject' id='Subject' {...register("Subject", {required:true})} />
+            <input type='text' className="border py-2 border-grey-300" name='subject' id='subject' {...register("subject", {required:true})} />
           </div>
           <div className='flex flex-col w-full max-w-xs'></div>
           <div className='flex flex-col w-full max-w-full'>
