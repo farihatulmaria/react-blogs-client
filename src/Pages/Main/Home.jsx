@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import BlogCard from '../../Components/BlogCard';
-import { GET_CONTENT } from '../../Redux/actionTypes';
+import { getAllBlogs } from '../../Redux/actionCreators/contentAction';
 const Home = () => {
     const blogs = useSelector(state=>state.content.blogs)
     const dispatch = useDispatch();
@@ -9,13 +9,13 @@ const Home = () => {
     useEffect(() => {
       fetch(url)
       .then(res=>res.json())
-      .then(data=>dispatch({type:GET_CONTENT,payload:data.data}))
+      .then(data=>dispatch(getAllBlogs(data.data)))
       .catch(err=>console.log(err))
-    }, [dispatch]) 
+    }, []) 
     // const activeClass = "!text-white bg-primary border-transparent";
     let content;
     
-    if(blogs.length){
+    if(blogs?.length){
         content= blogs.map(blog=><BlogCard key={blog._id} blog={blog}/>)
     }
     

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { ADD_CONTENT } from '../../Redux/actionTypes';
+import { postABlog } from '../../Redux/actionCreators/contentAction';
 const AddBlog = () => {
     const { register, handleSubmit } = useForm();
     const dispatch = useDispatch()
@@ -17,7 +17,7 @@ const AddBlog = () => {
             }
           }
       };
-      return dispatch({type:ADD_CONTENT,payload:blog})
+      return dispatch(postABlog(blog))
     };
     return (
      <div className='flex justify-center items-center h-full '>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { GET_A_CONTENT } from '../Redux/actionTypes';
+import { getABlog } from '../Redux/actionCreators/contentAction';
 
-const BlogCard = ({blog}) => {
-    let content =blog.Descri.content
+const BlogCard = (blog) => {
+    let content =blog.Descri.content;
     const dispatch = useDispatch()
     return (
         <div className="card bg-base-100 shadow-xl">
@@ -15,7 +15,7 @@ const BlogCard = ({blog}) => {
                 <h2 className="card-title text-center">{blog.Title}</h2>
                 <p>{Object.values(content)[0]}</p>
                 <div className="card-actions">
-                    <button onClick={()=>dispatch({type:GET_A_CONTENT,payload:blog})} className="btn btn-primary"><Link to={`/home/${blog._id}`}>Read More</Link></button>
+                    <button onClick={()=>{dispatch(getABlog(blog))}} className="btn btn-primary"><Link to={`/home/${blog._id}`}>Read More</Link></button>
                 </div>
             </div>
         </div>
@@ -23,10 +23,3 @@ const BlogCard = ({blog}) => {
 };
 
 export default BlogCard;
-
-
-/* 
-
-
-
-*/

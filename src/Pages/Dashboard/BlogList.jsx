@@ -2,7 +2,7 @@ import React from 'react';
 import { MdDeleteForever, MdOutlineSystemUpdateAlt } from 'react-icons/md';
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { DELETE_CONTENT } from '../../Redux/actionTypes';
+import { deleteABlog } from '../../Redux/actionCreators/contentAction';
 const BlogList = () => {
     const blogs = useSelector(state=>state.content.blogs);
     const dispatch = useDispatch()
@@ -46,7 +46,7 @@ const BlogList = () => {
                     </td>
                     <td className='p-2'>
                       <div className='flex justify-center'>
-                        <button className='text-red-700' onClick={()=>dispatch({type:DELETE_CONTENT,payload:blog})}>
+                        <button className='text-red-700' onClick={()=>dispatch(deleteABlog(blog))}>
                           <MdDeleteForever size={30}/>
                         </button>
                       </div>
