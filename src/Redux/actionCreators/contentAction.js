@@ -18,16 +18,16 @@ export const postABlog = (blog)=>{
         payload:blog
     }
 }
-export const updateABlog = (blog)=>{
+export const updateABlog = (data)=>{
     return {
         type:UPDATE_CONTENT,
-        payload:blog
+        payload:data
     }
 }
 
-export const deleteABlog = (blog)=>{
+export const deleteABlog = (id)=>{
     return {
         type:DELETE_CONTENT,
-        payload:blog
+        payload:id
     }
 }
