@@ -55,7 +55,7 @@ const BlogList = () => {
                 ))}
               </tbody>
             </table>
-            <button className='btn btn-block mt-3'><Link to={'/add-blog'}>Post a New Blog</Link></button>
+            <button className='btn btn-block mt-3'><Link to={'add-blog'}>Post a New Blog</Link></button>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
 // import SideBar from '../../layout/Dashboard/SideBar';
+import { AiTwotoneHome } from 'react-icons/ai';
+import { Link, Outlet } from 'react-router-dom';
 const Dashboard = () => {
     return (
         <>
@@ -13,9 +14,9 @@ const Dashboard = () => {
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
                 <ul className="menu p-4 w-80 bg-slate-700 text-white font-bold"> 
-                    <li><Link to={'/dasboard'}>Blog List</Link></li> 
-                    <li><Link to={'/dasboard/add-blog'}>Post Blog</Link></li>
-                    <li className='bg-slate-800 rounded-full text-center'><Link to={'/'}>Back To Home</Link></li>
+                    <li><Link to={'/dashboard'}>Blog List</Link></li> 
+                    <li><Link to={'add-blog'}>Post Blog</Link></li>
+                    <li className=' mt-auto bg-slate-800 rounded-full text-center'><Link to={'/'}>Back To Home <AiTwotoneHome/></Link></li>
                 </ul>
             </div>
         </div>
