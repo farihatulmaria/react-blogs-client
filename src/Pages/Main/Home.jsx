@@ -1,17 +1,9 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import BlogCard from '../../Components/BlogCard';
-import { getAllBlogs } from '../../Redux/actionCreators/contentAction';
 const Home = () => {
     const blogs = useSelector(state=>state.content.blogs)
-    const dispatch = useDispatch();
-    const url = 'https://react-blog-server-production.up.railway.app/blogs';
-    useEffect(() => {
-      fetch(url)
-      .then(res=>res.json())
-      .then(data=>dispatch(getAllBlogs(data.data)))
-      .catch(err=>console.log(err))
-    }, []) 
+    
     // const activeClass = "!text-white bg-primary border-transparent";
     let content;
     
