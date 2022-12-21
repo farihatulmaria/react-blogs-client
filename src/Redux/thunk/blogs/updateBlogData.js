@@ -10,7 +10,7 @@ const updateBlogData =(blogData)=>{
             }
         })
         const data = res.json();
-        if(data.acknowledged){
+        if(data){
             dispatch(updateABlog(blogData))
         }
     }

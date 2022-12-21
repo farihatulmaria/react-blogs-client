@@ -9,7 +9,7 @@ const deleteBlogData = (id)=>{
             }
         });
         const data = await res.json();
-        if(data.acknowledged){
+        if(data){
             dispatch(deleteABlog(id))
         }
     }

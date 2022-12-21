@@ -1,8 +1,13 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import BlogCard from '../../Components/BlogCard';
+import fetchBlogsData from '../../Redux/thunk/blogs/fetchBlogsData';
 const Home = () => {
     const blogs = useSelector(state=>state.content.blogs)
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(fetchBlogsData())
+    }, [])
     
     // const activeClass = "!text-white bg-primary border-transparent";
     let content;
