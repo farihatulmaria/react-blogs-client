@@ -40,7 +40,7 @@ const BlogList = () => {
                     <td className='p-2'>
                       <div className='flex justify-center'>
                         <button className='text-green-700'>
-                          <MdOutlineSystemUpdateAlt size={30}/>
+                          <MdOutlineSystemUpdateAlt size={30} />
                         </button>
                       </div>
                     </td>
@@ -55,7 +55,7 @@ const BlogList = () => {
                 ))}
               </tbody>
             </table>
-            <button className='btn btn-block mt-3'><Link to={'add-blog'}>Post a New Blog</Link></button>
+            <button className='btn btn-block mt-3'><Link to={'/dashboard/add-blog'}>Post a New Blog</Link></button>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import Main from "../layout/Main/Main";
 import AddBlog from '../Pages/Dashboard/AddBlog';
 import BlogList from "../Pages/Dashboard/BlogList";
 import Dashboard from '../Pages/Dashboard/Dashboard';
+import UpdateBlog from '../Pages/Dashboard/UpdateBlog';
 import Blog from "../Pages/Main/Blog";
 import Home from "../Pages/Main/Home";
 import ReadingHistory from "../Pages/Main/ReadingHistory";
@@ -36,6 +37,10 @@ const routes = createBrowserRouter([
       {
         path: "add-blog",
         element: <AddBlog />,
+      },
+      {
+        path: "update-blog",
+        element: <UpdateBlog />,
       },
     ],
   },
